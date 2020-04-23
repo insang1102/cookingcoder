@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap" 
                 rel="stylesheet">
     <link rel="stylesheet" href="cloning-youtube-website.css">
+    <script src="main.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -26,7 +27,8 @@
             <source src="video/example.mp4" type="video/mp4">
         </video>
     </section>
-    <!--Video info-->
+    <div class="infoAndUpNext">
+        <!--Video info-->
     <section class="info">
         <!--Metadata-->
         <div class="metadata">
@@ -36,7 +38,7 @@
                 <li>#Insang</li>
             </ul>
             <div class="titleAndButton">
-                <span class="title">Clone Coding. Youtube Mobile Website. How to make a youtube mobile website | Beginning for front-end developer. HTML, CSS, JAVASCRIPT(a little bit)</span>
+                <span class="title clamp">Clone Coding. Youtube Mobile Website. How to make a youtube mobile website | Beginning for front-end developer. HTML, CSS, JAVASCRIPT(a little bit)</span>
                 <button class="moreBtn">
                     <i class="fas fa-caret-down"></i>
                 </button>
@@ -62,7 +64,6 @@
                     <button><i class="fab fa-font-awesome-flag"></i><span>Report</span></button>
                 </li>
             </ul>
-        </div>
         <!--Description-->
         <div class="channel">
             <div class="metadata">
@@ -75,54 +76,63 @@
             <button class="subscribe">subscribe</button>
         </div>
     </section>
+    <!--Video Upnext-->
     <section class="upNext">
+        <span class="title">Up Next</span>
         <ul>
             <li class="item">
-                <img src="image/bear.jpg">
-                <span class="title">
-                    All About Bear
-                </span>
-                <span class="channel">
-                    CookingDwegy
-                </span>
-                <span class="views">
-                    999k views
-                </span>
+                <div class="img"><img src="image/bear.jpg"></div>
+                <div class="info">
+                    <span class="title">
+                         All About Bear
+                    </span>
+                    <span class="channel">
+                        CookingDwegy
+                    </span>
+                    <span class="views">
+                        999k views
+                    </span>
+                </div>
                 <button class="moreBtn">
                     <i class="fas fa-ellipsis-v"><span></span></i>
                 </button>
             </li>
             <li class="item">
-                <img src="image/bird.jpg">
-                <span class="title">
-                    All About Bird
-                </span>
-                <span class="channel">
-                    CookingDwegy
-                </span>
-                <span class="views">
-                    999k views
-                </span>
+                <div class="img"><img src="image/bird.jpg"></div>
+                <div class="info">
+                    <span class="title">
+                        All About Bird
+                    </span>
+                    <span class="channel">
+                        CookingDwegy
+                    </span>
+                    <span class="views">
+                        999k views
+                    </span>
+                </div>
                 <button class="moreBtn">
                     <i class="fas fa-ellipsis-v"><span></span></i>
                 </button>
             </li>
             <li class="item">
-                <img src="image/squirrel.jpg">
-                <span class="title">
-                    All About Squirrel
-                </span>
-                <span class="channel">
-                    CookingDwegy
-                </span>
-                <span class="views">
-                    999k views
-                </span>
+                <div class="img"><img src="image/squirrel.jpg"></div>
+                <div class="info">
+                    <span class="title">
+                        All About Squirrel
+                    </span>
+                    <span class="channel">
+                        CookingDwegy
+                    </span>
+                    <span class="views">
+                        999k views
+                    </span>
+                </div>
                 <button class="moreBtn">
                     <i class="fas fa-ellipsis-v"><span></span></i>
                 </button>
             </li>
         </ul>
     </section>
+    </div>
 </body>
 </html>
