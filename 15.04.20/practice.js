@@ -236,3 +236,58 @@ var myCar4 = new Car(90, "James Bond");
 
 myCar.drive(30,5);
 myCar3.logdriver();
+
+//
+
+var myDate = new Date();
+console.log(myDate);
+
+var myPastDate = new Date(1994, 10, 1, 9, 30, 15);
+var myFutureDate = new Date(2070, 10, 2, 9, 28, 10);
+
+console.log(myPastDate);
+console.log(myFutureDate);
+
+var birthday = new Date(1994, 10, 11, 4, 5, 6);
+var birthday2 = new Date(1994, 10, 11, 4, 5, 6);
+
+//get the month of the date (0 - 11)
+//console.log(birthday.getMonth());
+
+//get the full year (YYYY)
+//console.log(birthday.getFullYear());
+
+//get the date of the month (1 - 31)
+//console.log(birthday.getDate());
+
+//get the day of the week (0 - 6)
+//console.log(birthday.getDay());
+
+//get the hour of the date (0 - 23)
+//console.log(birthday.getHours());
+
+//get the number of milliseconds since 1st Jan 1970
+//console.log(birthday.getTime()); === quite a lot useful!
+
+if(birthday === birthday2) {
+
+    console.log("birthdays are equlal")
+
+} else {
+
+    console.log("birthdays are not equal")
+
+} // the reason why it doesn't work in Javascript is because it considers them as 2 different objecets regardless of their same properties.
+
+
+if(birthday.getTime() === birthday2.getTime()) {
+
+    console.log("birthdays are equlal")
+
+} else {
+
+    console.log("birthdays are not equal")
+} // these work appropriately.
+
+//자바스크립트에서 비동기는 코드 상의 순서대로 실행되지 않는 코드를 의미.
+
