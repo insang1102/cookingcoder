@@ -291,3 +291,23 @@ if(birthday.getTime() === birthday2.getTime()) {
 
 //자바스크립트에서 비동기는 코드 상의 순서대로 실행되지 않는 코드를 의미.
 
+/* DOM = Document Object Model // Object includes every single element like head, body, ul, p etc
+   The DOM is Application Programming Interface
+   Use the DOM when we interact with web pages
+    -Add
+    -Delete
+    -Change
+*/
+
+document.getElementsByClassName('content');
+var myContentDivs = document.getElementsByClassName('')
+myContentDivs
+var myH2 = myContentDivs[1].getElementsByTagName('h2');
+myH2
+myH2[0].innerHTML = 'YO NINJAS';
+document.getElementById('page-title');
+
+var myTitle = document.getElementById('page-title');
+myTitle
+myTitle.textContent;
+myTitle.textContent = 'Hey! Watcha doing there!'

@@ -4,6 +4,12 @@
 // unshift : add behind something
 // pop : pick last one
 // shift : pick first one
+
+// Property is accessible with big brackets or dot
+
+// Object { function, array }
+// Number, String, null, undefined, Boolean
+// object { property, method(containing function) }
 var boody = document.body;
 var numberCandidates;
 var numberArray;
