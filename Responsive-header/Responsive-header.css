@@ -1,111 +1,113 @@
 :root {
-    /* color */
-    --white-color: #ffffff;
-    --black-color: #000000;
-    --navy-color: #111859;
-    --orange-color: #ff9800;
+  /* color */
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --navy-color: #111859;
+  --orange-color: #ff9800;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
-    color: var(--white-color);
+  text-decoration: none;
+  color: var(--white-color);
 }
 
 /* Nav container */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white-color);
-    padding: 8px 12px;
-    background-color: var(--navy-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white-color);
+  padding: 8px 12px;
+  background-color: var(--navy-color);
 }
 
 /* Logo with text */
 .logo {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .logo i {
-    color: var(--orange-color);
-    margin-right: 5px;
+  color: var(--orange-color);
+  margin-right: 5px;
 }
 
 /* Menu */
 .menu {
-    display: flex;
-    font-size: 20px;
-    padding-left: 0;
-    list-style: none;
+  display: flex;
+  font-size: 20px;
+  padding-left: 0;
+  list-style: none;
 }
 
 .menu li {
-    padding: 10px; 
+  padding: 10px;
 }
 /* if you want to make more spaces when you put the cursor on the tap, use padding, not margin  */
 
 .menu li:hover {
-    background-color: var(--orange-color);
-    border-radius: 5px;
+  background-color: var(--orange-color);
+  border-radius: 5px;
 }
 
 .icons {
-    list-style: none;
-    display: flex;
-    padding-left: 0;
+  list-style: none;
+  display: flex;
+  padding-left: 0;
 }
 /* Now that I didn't add 'display: flex;', I couldn't make icons centre in order to create responsive form. */
 
 .icons i {
-    padding: 8px 12px;
+  padding: 8px 12px;
 }
 
 .Btn {
-    display: none;
-    position: absolute;
-    right: 32px;
-    color: var(--orange-color);
-    font-size: 30px;
+  display: none;
+  position: absolute;
+  right: 32px;
+  color: var(--orange-color);
+  font-size: 30px;
 }
 
 @media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 24px;
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
 
-    .menu {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-    }
-/* Instead of 'text-align', I used 'align-items' and it made hover function only on the content, not other spaces. */
-    .menu li {
-        width: 100%;
-    }
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  /* Instead of 'text-align', I used 'align-items' and it made hover function only on the content, not other spaces.
+ ***** This was because of 'a' location in html***** */
 
-    .icons {
-        display: none;
-        justify-content: center;
-        width: 100%;
-    }
+  .menu li {
+    width: 100%;
+  }
 
-    .Btn {
-        display: block;
-    }
+  .icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
 
-    .menu.active,
-    .icons.active {
-        display: flex;
-    }
+  .Btn {
+    display: block;
+  }
+
+  .menu.active,
+  .icons.active {
+    display: flex;
+  }
 }
