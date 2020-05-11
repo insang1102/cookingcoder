@@ -19,12 +19,50 @@ var asynchronousCallback = function (event) {
     // is the space already filled with?
     console.log("This is not a blank");
   } else {
+    // if it is a blank
     console.log("This is a blank");
     spaces[rowNum][spaceNum].textContent = turn;
-    if (turn === "X") {
-      turn = "O";
+    // are all three spaces filled with?
+    var full = false;
+    // horizontal line check
+    if (
+      spaces[rowNum][0].textContent === turn &&
+      spaces[rowNum][1].textContent === turn && // There was a spelling mistake which was lowercase of 'C' in content
+      spaces[rowNum][2].textContent === turn
+    ) {
+      full = true;
+    }
+    // vertical line check
+    if (
+      spaces[0][spaceNum].textContent === turn &&
+      spaces[1][spaceNum].textContent === turn &&
+      spaces[2][spaceNum].textContent === turn
+    ) {
+      full = true;
+    }
+    // diagonal line check
+    if (rowNum - spaceNum === 0 || Math.abs(rowNum - spaceNum) === 2) {
+      if (
+        (spaces[0][0].textContent === turn &&
+          spaces[1][1].textContent === turn &&
+          spaces[2][2].textContent === turn) || // if you want to make 2 IF, use '||' !!!!!!
+        (spaces[0][2].textContent === turn &&
+          spaces[1][1].textContent === turn &&
+          spaces[2][0].textContent === turn)
+      ) {
+        full = true;
+      }
+    }
+
+    // if full
+    if (full) {
+      console.log(turn + " won this game!");
     } else {
-      turn = "X";
+      if (turn === "X") {
+        turn = "O";
+      } else {
+        turn = "X";
+      }
     }
   }
 };
