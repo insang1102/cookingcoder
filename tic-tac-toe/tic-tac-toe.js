@@ -3,6 +3,7 @@ var TABLE = document.createElement("table");
 var spaces = [];
 var rows = [];
 var turn = "X";
+var result = document.createElement("div");
 
 var asynchronousCallback = function (event) {
   console.log(event.target); // space
@@ -56,8 +57,16 @@ var asynchronousCallback = function (event) {
 
     // if full
     if (full) {
-      console.log(turn + " won this game!");
+      result.textContent = turn + " won this game!";
+      // reload
+      turn = "X";
+      spaces.forEach(function (row) {
+        row.forEach(function (space) {
+          space.textContent = "";
+        });
+      });
     } else {
+      // if not full
       if (turn === "X") {
         turn = "O";
       } else {
@@ -80,4 +89,7 @@ for (var i = 1; i <= 3; i += 1) {
   TABLE.appendChild(row);
 }
 BODY.appendChild(TABLE);
+BODY.appendChild(result); // the function to represent what it is
 console.log("rows", rows, "spaces", spaces);
+
+// Reducing the number of nested loop proves your skills
