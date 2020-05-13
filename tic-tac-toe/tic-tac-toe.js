@@ -9,8 +9,8 @@ var asynchronousCallback = function (event) {
   console.log(event.target); // space
   console.log(event.target.parentNode); // row
   console.log(event.target.parentNode.parentNode); // table
-  // e.target === cliked child
-  // e.target.parentNode === cliked child's parent tag
+  // e.target === clicked child
+  // e.target.parentNode === clicked child's parent tag
   var rowNum = rows.indexOf(event.target.parentNode);
   console.log("rowNum", rowNum);
   var spaceNum = spaces[rowNum].indexOf(event.target); // [rowNum] must be contained otherwise that space can't recognise itself and it just shows '-1' which means "I'm lost"
@@ -87,7 +87,7 @@ for (var i = 1; i <= 3; i += 1) {
     row.appendChild(space);
   }
   TABLE.appendChild(row);
-}
+} // two-dimensional array
 BODY.appendChild(TABLE);
 BODY.appendChild(result); // the function to represent what it is
 console.log("rows", rows, "spaces", spaces);
