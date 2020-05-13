@@ -30,7 +30,10 @@ console.log(candidates);
 //        if the criterion values are changed
 var shuffle = [];
 while (candidates.length > 0) {
-  var movingValue = Math.floor(Math.random() * candidates.length);
+  var movingValue = candidates.splice(
+    Math.floor(Math.random() * candidates.length),
+    1
+  )[0];
   shuffle.push(movingValue);
 }
 console.log(shuffle);
