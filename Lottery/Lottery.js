@@ -28,7 +28,9 @@ console.log(candidates);
 //       unless the criterion values are changed
 // while = unless you know how many times you are supposed to use the loop
 //        if the criterion values are changed
-
+var shuffle = [];
 while (candidates.length > 0) {
-  var value = Math.floor(Math.random() * candidates.length);
+  var movingValue = Math.floor(Math.random() * candidates.length);
+  shuffle.push(movingValue);
 }
+console.log(shuffle);
