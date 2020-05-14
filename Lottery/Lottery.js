@@ -37,3 +37,10 @@ while (candidates.length > 0) {
   shuffle.push(movingValue);
 }
 console.log(shuffle);
+
+var pickedNum = shuffle.slice(0, 6).sort(function (p, c) {
+  return p - c; // if 'p -c' is greater than 0, then order is changed
+}); // if you want descending order, replace to 'c - p'
+var bonusNum = shuffle[shuffle.length - 1];
+
+console.log("pickedNum ", pickedNum, "bonusNum ", bonusNum);
