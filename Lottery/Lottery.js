@@ -44,3 +44,16 @@ var pickedNum = shuffle.slice(0, 6).sort(function (p, c) {
 var bonusNum = shuffle[shuffle.length - 1];
 
 console.log("pickedNum ", pickedNum, "bonusNum ", bonusNum);
+
+var result = document.getElementById("result");
+
+for (i = 0; i < pickedNum.length; i++) {
+  var ball = document.createElement("div");
+  ball.textContent = pickedNum[i];
+  result.appendChild(ball);
+}
+
+var bonusSpace = document.getElementsByClassName("bonusResult")[0];
+var bonusball = document.createElement("div");
+bonusball.textContent = bonusNum;
+bonusSpace.appendChild(bonusball);
