@@ -38,22 +38,68 @@ while (candidates.length > 0) {
 }
 console.log(shuffle);
 
+var bonus = shuffle[shuffle.length - 1];
 var pickedNum = shuffle.slice(0, 6).sort(function (p, c) {
   return p - c; // if 'p -c' is greater than 0, then order is changed
 }); // if you want descending order, replace to 'c - p'
-var bonusNum = shuffle[shuffle.length - 1];
 
-console.log("pickedNum ", pickedNum, "bonusNum ", bonusNum);
+console.log("pickedNum", pickedNum, "bonusNum", bonus);
 
-var result = document.getElementById("result");
+var result = document.querySelector("#result");
 
-for (i = 0; i < pickedNum.length; i++) {
+function ballColoring(number, result) {
   var ball = document.createElement("div");
-  ball.textContent = pickedNum[i];
+  ball.textContent = number;
+  ball.style.display = "inline-block";
+  ball.style.border = "1px solid black";
+  ball.style.borderRadius = "50%";
+  ball.style.textAlign = "center";
+  ball.style.width = "20px";
+  ball.style.height = "20px";
+  ball.style.marginRight = "5px";
+  ball.style.fontSize = "14px";
+  ball.className = "ballID" + number;
+  var backgroundColor;
+  if (number <= 10) {
+    backgroundColor = "red";
+  } else if (number <= 20) {
+    backgroundColor = "orange";
+  } else if (number <= 30) {
+    backgroundColor = "yellow";
+  } else if (number <= 40) {
+    backgroundColor = "blue";
+  } else {
+    backgroundColor = "green";
+  }
+  ball.style.background = backgroundColor;
   result.appendChild(ball);
 }
 
-var bonusSpace = document.getElementsByClassName("bonusResult")[0];
-var bonusball = document.createElement("div");
-bonusball.textContent = bonusNum;
-bonusSpace.appendChild(bonusball);
+setTimeout(function asynchronousCallbackFunction() {
+  ballColoring(pickedNum[0], result);
+}, 1000); // millisecond
+
+setTimeout(function asynchronousCallbackFunction() {
+  ballColoring(pickedNum[1], result);
+}, 2000); // millisecond
+
+setTimeout(function asynchronousCallbackFunction() {
+  ballColoring(pickedNum[2], result);
+}, 3000); // millisecond
+
+setTimeout(function asynchronousCallbackFunction() {
+  ballColoring(pickedNum[3], result);
+}, 4000); // millisecond
+
+setTimeout(function asynchronousCallbackFunction() {
+  ballColoring(pickedNum[4], result);
+}, 5000); // millisecond
+
+setTimeout(function asynchronousCallbackFunction() {
+  ballColoring(pickedNum[5], result);
+}, 6000); // millisecond
+
+setTimeout(function asynchronousCallbackFunction() {
+  var Space = document.querySelector(".bonus");
+  ballColoring(bonus, Space);
+}, 7000); // millisecond
