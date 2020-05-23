@@ -1,4 +1,4 @@
-var computerChoice = 0; // the longer and more specific names are, the better
+var coordinate = 0; // the longer and more specific names are, the better
 var RPS = {
   // This is 'dictionary',, 1:N is possible as well like Korean English property,,
   rock: "0",
@@ -6,29 +6,28 @@ var RPS = {
   paper: "-284px",
 };
 
-var RPS2 = {
-  "0": "rock",
-  "-142px": "scissor",
-  "-284px": "paper",
-};
+console.log(Object.entries(RPS));
+function computerChoice(coordinate) {
+  return Object.entries(RPS).find(function (v) {
+    return v[1] === coordinate;
+  })[0];
+}
 
 setInterval(function () {
-  if (computerChoice === RPS.rock) {
-    computerChoice = RPS.scissor;
-  } else if (computerChoice === RPS.scissor) {
-    computerChoice = RPS.paper;
+  if (coordinate === RPS.rock) {
+    coordinate = RPS.scissor;
+  } else if (coordinate === RPS.scissor) {
+    coordinate = RPS.paper;
   } else {
-    computerChoice = RPS.rock;
+    coordinate = RPS.rock;
   }
   document.querySelector("#computer").style.background =
-    "url(https://en.pimg.jp/023/182/267/1/23182267.jpg)" +
-    computerChoice +
-    " 0";
+    "url(https://en.pimg.jp/023/182/267/1/23182267.jpg)" + coordinate + " 0";
 }, 100);
 
 document.querySelectorAll(".btn").forEach(function (btn) {
   btn.addEventListener("click", function () {
     var myChoice = this.textContent;
-    console.log(myChoice, RPS2[computerChoice]);
+    console.log(myChoice, RPS2[coordinate]);
   });
 });
