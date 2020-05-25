@@ -6,11 +6,12 @@ var RPS = {
   paper: "-284px",
 };
 
-console.log(Object.entries(RPS));
+console.log(Object.entries(RPS)); // refactoring is super vital,,
 function computerChoice(coordinate) {
   return Object.entries(RPS).find(function (v) {
-    return v[1] === coordinate;
-  })[0];
+    // one-dimensional array === indexOf,, two-dimensional array === find, findIndex
+    return v[1] === coordinate; // to find numbers which is coordinate!!
+  })[0]; // to select 'rock, scissor, paper', not numbers!!
 }
 
 setInterval(function () {
@@ -28,6 +29,6 @@ setInterval(function () {
 document.querySelectorAll(".btn").forEach(function (btn) {
   btn.addEventListener("click", function () {
     var myChoice = this.textContent;
-    console.log(myChoice, RPS2[coordinate]);
+    console.log(myChoice, computerChoice(coordinate));
   });
 });
