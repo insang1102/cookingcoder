@@ -49,12 +49,13 @@ document.querySelectorAll(".btn").forEach(function (btn) {
     // console.log(myChoice, computerChoice(coordinate));
     var myScore = scoreChart[myChoice];
     var computerScore = scoreChart[computerChoice(coordinate)];
+    var scoreDifference = myScore - computerScore;
     // the more you shorten codes, the better it would be in terms of hardcoding afterwards,,
     // as adding other new values, if you remove long codes, it doubtlessly stands for 'improving your programming' indeed
-    if (myScore - computerScore === 0) {
+    if (scoreDifference === 0) {
       // check the 'myChoice' right name!! (it is ROCK, not ROCK)
       console.log("DRAW");
-    } else if ([-1, 2].includes(myScore - computerScore)) {
+    } else if ([-1, 2].includes(socreDifference)) {
       // Array.includes === the '||" function could be shortened!!
       console.log("WIN!!");
     } else {
